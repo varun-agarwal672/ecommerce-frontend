@@ -12,7 +12,7 @@ const Cart = () => {
     }, [])
 
     const fetchCartDetails = async (userId) => {
-        fetch(`http://localhost:8019/cart/user`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/cart/user`, {
             credentials : "include"
           })
             .then((res) => {
@@ -32,7 +32,7 @@ const Cart = () => {
         if (cartItem.quantity < 0) return; // Prevents negative or zero quantity
 
         try {
-            const response = await fetch(`http://localhost:8019/cart/${cartId}`, {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/cart/${cartId}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -69,7 +69,7 @@ const Cart = () => {
     // Remove an item from the cart
     const handleRemoveItem = async (cartItem) => {
         try {
-            const response = await fetch(`http://localhost:8019/cart/${cartId}`, {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/cart/${cartId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"

@@ -48,7 +48,7 @@ const Auth = () => {
 
         console.log(formDataLogin);
 
-        const url = isSignup ? "http://localhost:8019/auth/signup" : "http://localhost:8019/auth/login";
+        const url = isSignup ? `${process.env.REACT_APP_BASE_URL}/auth/signup` : `${process.env.REACT_APP_BASE_URL}/auth/login`;
 
         try {
             const response = await fetch(url, {
@@ -80,7 +80,7 @@ const Auth = () => {
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = "http://localhost:8019/oauth2/authorization/google";
+        window.location.href = `${process.env.REACT_APP_BASE_URL}/oauth2/authorization/google`;
     };
 
     return (

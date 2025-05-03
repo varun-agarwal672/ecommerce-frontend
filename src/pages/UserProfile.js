@@ -25,7 +25,7 @@ const UserProfile = () => {
  
     const fetchUserProfile = async () => {
         try {
-            const response = await fetch("http://localhost:8019/user", {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/user`, {
                 method: "GET",
                 credentials: "include", // Include cookies/session for auth
             });
@@ -47,7 +47,7 @@ const UserProfile = () => {
     const handleUpdate = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8019/user", {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/user`, {
                 method: "PUT",
                 credentials: "include",
                 headers: {

@@ -22,7 +22,7 @@ const ProductList = () => {
   }, [categoryId]);
 
   const fetchProducts = async (categoryId) => {
-    fetch(`http://localhost:8019/product/category/${categoryId}`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/product/category/${categoryId}`, {
       credentials : "include"
     })
     .then((response) => {

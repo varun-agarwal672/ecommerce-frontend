@@ -25,7 +25,7 @@ const ProductDescription = () => {
 
     const fetchCartOfUser = async (userId) => {
         try {
-            const response = await fetch(`http://localhost:8019/cart/user`, {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/cart/user`, {
                 credentials : "include"
               })
             if (!response.ok) {
@@ -40,7 +40,7 @@ const ProductDescription = () => {
     }
 
     const fetchProductDetail = async (productId) => {
-        fetch(`http://localhost:8019/product/${productId}`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/product/${productId}`, {
             credentials : "include"
           })
             .then((res) => {
@@ -54,7 +54,7 @@ const ProductDescription = () => {
 
     const isProductAddedToCart = async (cartId) => {
         try {
-            const response = await fetch(`http://localhost:8019/cart/${cartId}?product-id=${encodeURIComponent(productId)}`, {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/cart/${cartId}?product-id=${encodeURIComponent(productId)}`, {
                 credentials : "include"
               })
             if (!response.ok) {
@@ -72,7 +72,7 @@ const ProductDescription = () => {
     // Function to handle Add to Cart (can be connected to cart system)
     const addToCart = async (cartItem) => {
         try {
-            const response = await fetch(`http://localhost:8019/cart`, {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/cart`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

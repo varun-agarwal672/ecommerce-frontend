@@ -20,7 +20,7 @@ const Checkout = () => {
   }, [])
 
   const fetchUserDetails = async (userId) => {
-    const response = await fetch(`http://localhost:8019/user`, {
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/user`, {
       credentials : "include"
     });
 
@@ -68,7 +68,7 @@ const Checkout = () => {
   };
 
   const emptyCart = async (cartId) => {
-    const response = await fetch(`http://localhost:8019/cart/${cartId}/empty`, {
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/cart/${cartId}/empty`, {
         method : "DELETE",
         credentials : "include"
     });
@@ -82,7 +82,7 @@ const Checkout = () => {
   const createPayment = async (createdOrderId) => {
     try {
         console.log(createdOrderId);
-        const response = await fetch(`http://localhost:8019/payment`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/payment`, {
             method : "POST",
             headers : {
                 "Content-Type" : "application/json",
@@ -129,7 +129,7 @@ const Checkout = () => {
     };
 
     try {
-        const response = await fetch("http://localhost:8019/order", {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/order`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
