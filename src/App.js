@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import HomePage from './pages/HomePage';
-import Navbar from './components/Navbar';
 import ProductList from './pages/ProductList';
 import ProductDescription from './pages/ProductDescription';
 import Cart from './pages/Cart';
@@ -10,9 +8,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from './components/Layout';
 import Auth from './pages/Auth';
 import ProtectedRoute from './components/ProtectedRoute';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { login } from './store/authSlice';
 import OAuthRedirect from './pages/OAuthRedirect';
 import UserProfile from './pages/UserProfile';
 

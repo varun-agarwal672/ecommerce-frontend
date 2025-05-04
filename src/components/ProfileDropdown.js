@@ -11,7 +11,7 @@ const ProfileDropdown = () => {
   
   const handleLogout = async () => {
     try {
-        const response = await fetch("http://localhost:8019/auth/logout", {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/auth/logout`, {
             method: "POST",
             credentials: "include"  // Ensures cookies are sent
         });
